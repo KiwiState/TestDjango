@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
 	<link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
+	
 	<title>Ground Zero</title>
 	<!--Boostrap 4.0.0-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -36,16 +37,16 @@
 								<a href="{% url 'galeria'%}" class="nav-link">Galeria</a>
 							</li>
 							<li class="nav-item">
-								<a href="{% static 'core/artistas.html'%}" class="nav-link">Artistas</a>
+								<a href="{% url 'artistas'%}" class="nav-link">Artistas</a>
 							</li>
 							<li class="nav-item">
-								<a href="concepto.html" class="nav-link">Concepto</a>
+								<a href="{% url 'concepto'%}" class="nav-link">Concepto</a>
 							</li>
 							<li class="nav-item">
-								<a href="login.html" class="nav-link">Iniciar Sesi&oacute;n</a>
+								<a href="{% url 'login'%}" class="nav-link">Iniciar Sesi&oacute;n</a>
 							</li>
 							<li class="nav-item">
-								<a href="subirobra.html" class="nav-link">Subir Obra</a>
+								<a href="{% url 'subirobra'%}" class="nav-link">Subir Obra</a>
 							</li>
 						</ul>
 					</div>					
@@ -95,7 +96,7 @@
 			<p>Instagram: Ground Zero</p>
 			<p>Facebook:Ground Zero</p>
 			<lu>
-				<a href="contacto.html" class="">Atenci&oacute;n al cliente/Contactenos</a>
+				<a href="{% url 'contacto'%}" class="">Atenci&oacute;n al cliente/Contactenos</a>
 			</lu>
 		</div>
 		
