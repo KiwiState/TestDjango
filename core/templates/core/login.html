@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/estilosecundario.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/estilosecundario.css">
+    <!--Boostrap 4.0.0-->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  </head>
+  <body>
+    <div>
+      <div class="contendor2">
+        <a href="#"><img src="img/logo_final_este_si_que_si_ahora_zi.png"  width= 150px height="50" alt="Logo" /></a>
+      </div>
+      <nav class="navbar navbar-expand-sm navbar-light bg-light">
+          <a href="index.html" class="navbar-brand">Inicio</a>
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarMenu">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a href="galeria.html" class="nav-link">Galeria</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="artistas.html" class="nav-link">Artistas</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="concepto.html" class="nav-link">Concepto</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="login.html" class="nav-link">Iniciar Sesi&oacute;n</a>
+                  </li>
+              </ul>
+          </div>					
+      </nav>
+    </div>
+    
+    <div class="login-box">
+      <h1>Ingrese aqu&iacute;
+      </h1>
+      <form method="POST" enctype="multipart/formdata" name="login">
+        <!-- USERNAME INPUT -->
+        <label for="usuario">Usuario/Correo</label>
+        <input name="nombre_usuario" type="text" id ="correo" value="" placeholder="Ingrese nombre usuario/correo" autocomplete="on" required>
+        <!-- PASSWORD INPUT -->
+        <label for="Contraseña">Contraseña</label>
+        <input name="contraseña" type="password" value="" placeholder="Ingrese su contraseña" autocomplete="on" required>
+        <input type="submit" value="Iniciar Sesi&oacute;n" class="btn btn-success" onclick="isEmail(document.getElementById('correo').value)">  
+        <a href="#">¿Olvid&oacute; su Contraseña?</a><br>
+        <a href="registro.html">¿No posee una cuenta?</a>
+      </form>
+    </div>
+    <div>
+	    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+   
+        <!--JQuery-->
+	    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+      <!--Pooper-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <!--Boostrap-->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    </div>
+
+
+    <script>
+      function isEmail(email) {
+          var expRex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          var esValido = expRex.test(email)
+          if(esValido == false){
+              alert('El correo electronico no es válido')
+          }
+      }
+  </script>
+  </body>
+</html>

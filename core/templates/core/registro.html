@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/estilosecundario.css">
+  <title>Registro</title>
+
+</head>
+<body>
+  <div>
+    <div class="contendor2">
+      <a href="#"><img src="img/logo_final_este_si_que_si_ahora_zi.png"  width= 150px height="50" alt="Logo" /></a>
+    </div>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a href="index.html" class="navbar-brand">Inicio</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="galeria.html" class="nav-link">Galeria</a>
+                </li>
+                <li class="nav-item">
+                    <a href="artistas.html" class="nav-link">Artistas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="concepto.html" class="nav-link">Concepto</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">Iniciar Sesi&oacute;n</a>
+                </li>
+            </ul>
+        </div>					
+    </nav>
+  </div>
+
+  <div class="register-box">
+    <h1>Ingrese aqu&iacute;
+    </h1>
+    <form action="procesar.php" method="POST" enctype="multipart/form-data" name="registro">
+      <div class="nombre-registro">
+        <label for="nombre">Nombre: </label>
+        <input name="nombre" type="text" value="" placeholder="Ingrese su nombre" autocomplete="on" required>
+      </div>
+      <div class="email">
+        <label for="email">Email: </label>
+        <input name="email" type="text" value="" id ="correo" placeholder="nombre@email.com" autocomplete="on" required>
+      </div>
+      <div class="pass-registro">
+        <label for="contraseña">Contraseña: </label>
+        <input name="contraseña" type="password" value="" placeholder="Ingrese una contraseña" size="30" autocomplete="on" required>
+      </div>
+      <div class="pass-confirm">
+        <label for="contraseña">Confirme su contraseña: </label>
+        <input name="contraseña-confirm" type="password" value="" placeholder="Ingrese denuevo la contraseña" size="30" autocomplete="on" required>
+      </div>
+      <div class="sexo">
+        <label for="sexo">Sexo: </label>
+        <input type="radio" name="hm" value="h" required> Hombre
+        <input type="radio" name="hm" value="m" required> Mujer
+      </div>
+      <div class="fecha-nac">
+        <label for="fecha.nac">Año de nacimiento: </label>
+        <input type="date" name="nacido" min="1900" placeholder="Año de nacimiento" required>
+      </div>
+      
+      <p>
+        
+        <input type="submit" value="Registro" class="btn btn-success" onclick="isEmail(document.getElementById('correo').value)">
+        <input type="reset" value="Borrar">
+      </p>
+    </form>
+  </div>
+
+
+
+<!--Referencias-->
+  
+<!--JQuery-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!--Pooper-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<!--Boostrap-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<script>
+  function isEmail(email) {
+      var expRex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      var esValido = expRex.test(email)
+      if(esValido == false){
+          alert('El correo electronico no es válido')
+      }
+  }
+</script>
+</body>
+</html>
