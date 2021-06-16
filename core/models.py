@@ -1,12 +1,13 @@
 from django.db import models
 
-class  Usuarios(models.model):
-    id = models.AutoField(primary_key = true)
-    nombre = models.CharsField(max_lenght = 128)
-    correo = models.EmailField(max_lenght = 200)
-    sexo = models.CharsField(max_lenght = 2)
-    edad = models.CharsField(max_lenght = 2)
-
+class  Usuarios(models.Model):
+    id = models.IntegerField(primary_key=True,verbose_name='Id',default ='')
+    nombre = models.CharField(max_length=128,verbose_name='Nombre',default ='')
+    correo = models.EmailField(max_length=200,verbose_name='Email',default ='')
+    sexo = models.CharField(max_length=6,verbose_name='Sexo',default ='')
+    edad = models.IntegerField(verbose_name='edad',default = 0)
+    def __str__(self):
+        return self.nombre
 
 # Create your models here.
 ##class Categoria(models.Model):
