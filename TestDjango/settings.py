@@ -76,8 +76,15 @@ WSGI_APPLICATION = 'TestDjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': '127.0.0.1/xe',
+        'USER':'vicente',
+        'PASSWORD':'oracle',
+        'TEST':{
+            'USER' : 'default_test',
+            'TBLSPACE' : 'default_test',
+            'TBLSPACE_TEMP' :'default_test_tmp'
+        },
     }
 }
 
