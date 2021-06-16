@@ -6,9 +6,22 @@ class  Usuarios(models.Model):
     correo = models.EmailField(max_length=200,verbose_name='Email',default ='')
     sexo = models.CharField(max_length=6,verbose_name='Sexo',default ='')
     edad = models.IntegerField(verbose_name='edad',default = 0)
+    artista = models.BooleanField(verbose_name='artista',default = 0)
     def __str__(self):
         return self.nombre
 
+##class Categoria(models.Model):
+##    idCategoria=models.IntegerField(primary_key=true,verbose_name='Id Categoria')
+##    nombreCategoria = models.CharField(max_lenght=58,verbose_name='Concepto')
+##    nombreCategoria = models.ForeignKey
+##class  Pintura(models.Model):
+##    id_pintura = models.IntegerField(primary_key=True,verbose_name='Id',default ='')
+##    titulo = models.CharField(max_length=128,verbose_name='Nombre',default ='')
+##    id = models.EmailField(max_length=200,verbose_name='Email',default ='')
+##    descripcion = models.CharField(max_length=6,verbose_name='Sexo',default ='')
+##    categoria = models.IntegerField(verbose_name='edad',default = 0)
+##    fecha = models.BooleanField(verbose_name='artista',default = 0)
+##    def __str__(self):      
 # Create your models here.
 ##class Categoria(models.Model):
 ##    idCategoria=models.IntegerField(primary_key=true,verbose_name='Id Categoria')
