@@ -48,9 +48,12 @@ def pint4(request):
     
 def form_mod_pintura(request, id):
     pintura = Pintura.objects.get(id_pintura=id)
-    datos ={
-        'form' : PinturaForm(instance=pintura)
-    }
+    datos ={ 'form' : PinturaForm(instance=pintura)}
+    if request.method == 'POST':
+        formulario = PinturaForm(data=request.POST,instance=pintura)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Modificado correctamente"
     return render(request,'core/modificar_pinturas.html',datos)
 
 def registro(request):
