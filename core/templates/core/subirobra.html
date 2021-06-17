@@ -39,6 +39,26 @@
             </ul>
         </div>					
     </nav>
+
+    <div class="row">
+        <form method="post" action="" id = "formulario">
+        {% csrf_token %}
+        <div class="form-group">
+        {{form.as_table}}        
+        </div>
+
+        <input type="submit" class = "btn btn-danger" id = "enviar" value = "Enviar">
+        <input type="reset" class="btn btn-primary" id = "limpiar" value = "Limpiar">
+        <div id = error class = "alert alert-danger" role = "alert"></div>
+        <div class = "alert alert-success" role="alert">
+                {{alert}}
+        </div>
+        
+        
+    </form>
+    
+    </div>
+<!-- 
     <div class="obra-box">
         <form action="procesar.php" method="GET" enctype="multipart/form-data" name="enviarobra">
             <div class="nombre-obra">
@@ -62,7 +82,7 @@
             </p>
         </form>
     </div>
-
+-->
 
 <!--Referencias-->
 
@@ -73,5 +93,10 @@
 <!--Boostrap-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
  
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#error").hide();
+    })
+</script>    
 </body>
 </html>

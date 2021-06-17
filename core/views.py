@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .forms import PinturaForm
 # Create your views here.
 def home(request):
     return render(request,'core/index.html')
@@ -35,7 +35,18 @@ def pint4(request):
 def registro(request):
     return render(request,'core/registro.html')
 def subirobra(request):
-    return render(request,'core/subirobra.html')
+    
+    datos ={'form' :PinturaForm}
+    
+    if request.method=='POST':
+        
+        formulario = PinturaForm(request.POST)
+        
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Guardado correctamente" 
+
+    return render(request,'core/subirobra.html',datos)
     
 
           

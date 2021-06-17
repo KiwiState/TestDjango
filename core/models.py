@@ -12,6 +12,11 @@ class  Usuarios(models.Model):
     def __str__(self):
         return self.nombre
 
+class  Contacto(models.Model):
+    email       = models.EmailField(primary_key=True,verbose_name='email',null = True)
+    titulo      = models.CharField(max_length=128,verbose_name='titulo',null = True)
+    descripcion = models.CharField(max_length=500,verbose_name='descripcion',null = True)       
+
 class Categoria(models.Model):
     idCategoria=models.IntegerField(primary_key=True,verbose_name='Id Categoria',null = True)
     nombreCategoria = models.CharField(max_length=60,verbose_name='Concepto',null = True)
