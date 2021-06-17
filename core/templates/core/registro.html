@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="{% static 'core/css/estilosecundario.css'%}">
+  <link rel="stylesheet" href="{% static 'core/css/estilosecundario.css' %}">
   <title>Registro</title>
 
 </head>
@@ -38,6 +38,26 @@
       </div>					
     </nav>
   </div>
+
+    <div class="row">
+      <form method="post" action="" id = "formulario">
+        {% csrf_token %}
+        <div class="form-group">
+         {{form.as_table}}        
+        </div>
+
+        <input type="submit" class = "btn btn-danger" id = "enviar" value = "Enviar">
+        <input type="reset" class="btn btn-primary" id = "limpiar" value = "Limpiar">
+        <div id = error class = "alert alert-danger" role = "alert"></div>
+        <div class = "alert alert-success" role="alert">
+          {{alert}}
+        </div>
+      
+      </form>
+    </div>
+
+<!--
+
 
   <div class="register-box">
     <h1>Ingrese aqu&iacute;
@@ -76,7 +96,7 @@
       </p>
     </form>
   </div>
-
+-->
 
 
 <!--Referencias-->
@@ -88,6 +108,11 @@
 <!--Boostrap-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+<script type="text/javascript">
+  $(document).ready(function(){
+      $("#error").hide();
+  })
+</script>  
 
 <script>
   function isEmail(email) {

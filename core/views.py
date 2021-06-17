@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import PinturaForm
+from .forms import PinturaForm,UsuariosForm,ContactoForm
 # Create your views here.
 def home(request):
     return render(request,'core/index.html')
@@ -14,6 +14,15 @@ def concepto(request):
     return render(request,'core/concepto.html')
 
 def contacto(request):
+    datos ={'form' :ContactoForm}
+    
+    if request.method=='POST':
+        
+        formulario = ContactoForm(request.POST)
+        
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Guardado correctamente" 
     return render(request,'core/contacto.html')      
 
 def galeria(request):
@@ -33,6 +42,16 @@ def pint4(request):
     return render(request,'core/Pint_4.html')
 
 def registro(request):
+    datos ={'form' :UsuariosForm}
+    
+    if request.method=='POST':
+        
+        formulario = UsuariosForm(request.POST)
+        
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Guardado correctamente" 
+
     return render(request,'core/registro.html')
 def subirobra(request):
     

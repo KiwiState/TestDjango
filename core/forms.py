@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Pintura,Contacto
+from .models import Pintura,Contacto,Usuarios
 
 class PinturaForm(ModelForm):
     class Meta:
@@ -10,4 +10,11 @@ class PinturaForm(ModelForm):
 class ContactoForm(ModelForm):
     class Meta:
         model = Contacto
-        fields = ['Email','Titulo','descripción']
+        fields = ['email','titulo','descripcion']
+
+class UsuariosForm(ModelForm):
+    class Meta:
+        model = Usuarios
+        fields = ['nombre','correo','sexo','edad','artista','id']        
+
+     

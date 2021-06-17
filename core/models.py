@@ -16,6 +16,8 @@ class  Contacto(models.Model):
     email       = models.EmailField(primary_key=True,verbose_name='email',null = True)
     titulo      = models.CharField(max_length=128,verbose_name='titulo',null = True)
     descripcion = models.CharField(max_length=500,verbose_name='descripcion',null = True)       
+    def __str__(self):   
+        return self.titulo
 
 class Categoria(models.Model):
     idCategoria=models.IntegerField(primary_key=True,verbose_name='Id Categoria',null = True)
