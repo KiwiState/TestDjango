@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import PinturaForm,UsuariosForm,ContactoForm
+from .forms import PinturaForm,UsuariosForm,ContactoForm,Pintura
 # Create your views here.
 def home(request):
     return render(request,'core/index.html')
@@ -14,6 +14,7 @@ def concepto(request):
     return render(request,'core/concepto.html')
 
 def contacto(request):
+
     datos ={'form' :ContactoForm}
     
     if request.method=='POST':
@@ -23,10 +24,14 @@ def contacto(request):
         if formulario.is_valid:
             formulario.save()
             datos['mensaje'] = "Guardado correctamente" 
-    return render(request,'core/contacto.html')      
+    return render(request,'core/contacto.html',datos)      
 
 def galeria(request):
-    return render(request,'core/galeria.html')
+    pintura = Pintura.objects.all()
+    datos = {
+        'pintura': pintura
+    }
+    return render(request,'core/galeria.html',datos)
 
 def login(request):
     return render(request,'core/login.html')
@@ -40,8 +45,16 @@ def pint3(request):
     return render(request,'core/Pint_3.html')
 def pint4(request):
     return render(request,'core/Pint_4.html')
+    
+def form_mod_pintura(request, id):
+    pintura = Pintura.objets.get(titulo=id)
+    datos ={
+        'form' : PinturaForm(instance=pintura)
+    }
+    return render(request,'core/modificar_pinturas.html',datos)
 
 def registro(request):
+
     datos ={'form' :UsuariosForm}
     
     if request.method=='POST':
@@ -52,7 +65,7 @@ def registro(request):
             formulario.save()
             datos['mensaje'] = "Guardado correctamente" 
 
-    return render(request,'core/registro.html')
+    return render(request,'core/registro.html',datos)
 def subirobra(request):
     
     datos ={'form' :PinturaForm}
@@ -66,6 +79,10 @@ def subirobra(request):
             datos['mensaje'] = "Guardado correctamente" 
 
     return render(request,'core/subirobra.html',datos)
-    
-
+def form_list_mod_pintura(request):   
+    pintura = Pintura.objects.all()
+    datos = {
+        'pintura': pintura
+    }
+    return render(request,'core/listar_pinturas_modificar.html',datos)
           
