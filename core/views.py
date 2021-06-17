@@ -47,7 +47,7 @@ def pint4(request):
     return render(request,'core/Pint_4.html')
     
 def form_mod_pintura(request, id):
-    pintura = Pintura.objets.get(titulo=id)
+    pintura = Pintura.objects.get(id_pintura=id)
     datos ={
         'form' : PinturaForm(instance=pintura)
     }

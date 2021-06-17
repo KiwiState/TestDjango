@@ -79,10 +79,16 @@
         <div class="row">
             <table class="table">
                 <thead>
+                    <tr>
+                        <th scope = "col"><th>Pintura</th><th scope = "col">Titulo</th><th scope = "col">descripcion</th><th scope = "col">categoria</th><th scope = "col">fecha</th><th scope = "col">id</th><th scope = "col">id_pintura</th><th scope = "col">Opciones</th>
+                    </tr>
+                </thead>
+
+
+                <thead>
                     {% for ve in pintura %} 
-                    <th scope = "col"><th>Pintura</th><th scope = "col">Titulo</th><th scope = "col">descripcion</th><th scope = "col">categoria</th><th scope = "col">fecha</th><th scope = "col">id</th><th scope = "col">id_pintura</th><th scope = "col">Opciones</th>
                     <tr><td>{{ve.imagen}}</td><td>{{ve.titulo}}</td><td>{{ve.descripcion}}</td><td>{{ve.categoria}}</td><td>{{ve.fecha}}</td><td>{{ve.id}}</td><td>{{ve.id_pintura}}</td>           
-                        <td><a href ="{% url 'form_mod_pintura' ve.titulo %}">Modificar</a></td>
+                        <td><a href ="{% url 'form_mod_pintura' ve.id_pintura %}">Modificar</a></td>
                     </tr>   
                     {% endfor %} 
                 </thead>

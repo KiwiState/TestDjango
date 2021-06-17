@@ -41,7 +41,6 @@
             <div class="form-group">
             {{form.as_table}}      
             </div>
-            
             <input type="submit" class = "btn btn-danger" id = "enviar" value = "Modificar">
             <input type="reset" class="btn btn-primary" id = "limpiar" value = "Limpiar">
             <div id = error class = "alert alert-danger" role = "alert"></div>
@@ -55,7 +54,11 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     </div>
-</script>
-
+ 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#error").hide();
+    })
+</script>  
 </body>
 </html>
