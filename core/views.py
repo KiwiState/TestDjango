@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .forms import PinturaForm,UsuariosForm,ContactoForm,Pintura
 # Create your views here.
 def home(request):
@@ -88,4 +88,12 @@ def form_list_mod_pintura(request):
         'pintura': pintura
     }
     return render(request,'core/listar_pinturas_modificar.html',datos)
+
+def form_del_pintura(request,id):   
+    pintura = Pintura.objects.get(id_pintura=id)
+    pintura.delete()
+    return redirect(to="form_mod_list_pintura")
+
+     
+    
           

@@ -86,18 +86,17 @@
 
 
                 <thead>
+                    <tbody>
                     {% for ve in pintura %} 
                     <tr><td>{{ve.imagen}}</td><td>{{ve.titulo}}</td><td>{{ve.descripcion}}</td><td>{{ve.categoria}}</td><td>{{ve.fecha}}</td><td>{{ve.id}}</td><td>{{ve.id_pintura}}</td>           
                         <td><a href ="{% url 'form_mod_pintura' ve.id_pintura %}">Modificar</a></td>
+                        <td><a href ="{% url 'form_del_pintura' ve.id_pintura %}">Eliminar</a></td>
                     </tr>   
                     {% endfor %} 
                 </thead>
-                <tbody>
-                    
-
-                    
-                </tbody>
+                    </tbody>
             </table> 
+             
     
     
     <div>
