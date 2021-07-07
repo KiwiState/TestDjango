@@ -107,7 +107,16 @@
         </div>
     </div>
 
-
+    {% for ve in pintura %}  
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="{% url 'pint4'%}" class=""><img src={{ve.imagen}} width="300" height="200"></a>
+            <div class="des">{{ve.descripcion}}</div>    
+        </div>
+    </div>
+    {% endfor %}
+    
+    <!--
         <h1>Pinturas Indie</h1>
 
     
@@ -117,7 +126,7 @@
             <tr><td>{{ve.imagen}}</td><td>{{ve.titulo}}</td>    
             {% endfor %}
         </table>
-    
+    -->
 
 
   
