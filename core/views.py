@@ -37,8 +37,8 @@ def galeria(request):
     }
     return render(request,'core/galeria.html',datos)
 
-def login(request):
-    return render(request,'core/login.html')
+def login_u(request):
+    return render(request,'core/login_u.html')
 
 
 def pint1(request):

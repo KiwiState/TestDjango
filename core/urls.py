@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home,artistas,bs,concepto,contacto,galeria,login,pint1,pint2,pint3,pint4,registro,subirobra,form_list_mod_pintura,form_mod_pintura,form_del_pintura,pintura_fill
+from .views import home,artistas,bs,concepto,contacto,galeria,login_u,pint1,pint2,pint3,pint4,registro,subirobra,form_list_mod_pintura,form_mod_pintura,form_del_pintura,pintura_fill
 
 urlpatterns=[
     path('',home,name="home"),
@@ -8,7 +8,7 @@ urlpatterns=[
     path('concepto/',concepto,name="concepto"),
     path('contacto/',contacto,name="contacto"),
     path('galeria/',galeria,name="galeria"),
-    path('login/',login,name="login"),
+    path('login_u/',login_u,name="login_u"),
     path('pint1/',pint1,name="pint1"),
     path('pint2/',pint2,name="pint2"),
     path('pint3/',pint3,name="pint3"),
