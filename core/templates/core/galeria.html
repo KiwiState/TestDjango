@@ -110,7 +110,7 @@
     {% for ve in pintura %}  
     <div class="responsive">
         <div class="gallery">
-            <a  href="{% url 'pint4'%}" class=""><img src={{ve.imagen}} width="300" height="200"></a>
+            <a  href="{% url 'pintura' ve.id_pintura %}" class=""><img src={{ve.imagen.url}} width="300" height="200"></a>
             <div class="des">{{ve.descripcion}}</div>    
         </div>
     </div>

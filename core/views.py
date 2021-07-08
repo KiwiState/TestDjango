@@ -1,11 +1,15 @@
 from django.shortcuts import render,redirect
-from .forms import PinturaForm,UsuariosForm,ContactoForm,Pintura
+from .forms import PinturaForm,UsuariosForm,ContactoForm,Pintura,Usuarios
 # Create your views here.
 def home(request):
     return render(request,'core/index.html')
 
 def artistas(request):
-    return render(request,'core/artistas.html')
+    usuarios = Usuarios.objects.all()
+    datos = {
+        'usuarios': usuarios
+    }
+    return render(request,'core/artistas.html',datos)
 
 def bs(request):
     return render(request,'core/bs.html')
@@ -74,14 +78,12 @@ def subirobra(request):
     datos ={'form' :PinturaForm}
     
     if request.method=='POST':
-        
         formulario = PinturaForm(request.POST)
-        
         if formulario.is_valid:
             formulario.save()
             datos['mensaje'] = "Guardado correctamente" 
-
     return render(request,'core/subirobra.html',datos)
+    
 def form_list_mod_pintura(request):   
     pintura = Pintura.objects.all()
     datos = {
@@ -94,6 +96,12 @@ def form_del_pintura(request,id):
     pintura.delete()
     return redirect(to="form_mod_list_pintura")
 
+def pintura_fill(request, id):
+    pintura = Pintura.objects.get(id_pintura=id)
+    datos = {
+        'pintura': pintura
+    }
+    return render(request,'core/Pintura_autofill.html',datos)
      
     
           

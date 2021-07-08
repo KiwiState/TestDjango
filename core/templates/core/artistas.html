@@ -112,6 +112,14 @@
         </div>
     </div>
 
+    {% for ve in usuarios %}  
+    <div class="responsive">
+        <div class="gallery">
+            <img src="{% static 'core/img/images.jpg'%}" width="300" height="200">
+            <div class="des">{{ve.nombre}}</div>    
+        </div>
+    </div>
+    {% endfor %}
  
 <!--        
     <h4>Galeria:</h4>

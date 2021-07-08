@@ -6,8 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="{% static 'core/css/estilo_pintura.css' %}">
-    
+    <link rel="stylesheet" href="{% static 'core/css/estilosecundario.css' %}">
 	<title>Ground Zero</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
@@ -46,25 +45,19 @@
 
 
 <body>    
-    <div class="container">
-        <div class="card">
-                <div class ="imgbx">
-                    <img src="{% static 'core/img/3.png'%}" width="300" height="200">
-                </div>
-                <div class = "content">
-                    <h2>La noche estrellada</h2>
-                    <p>La noche estrellada es un óleo sobre lienzo del pintor posimpresionista neerlandés Vincent van Gogh.</p>
-                </div>
-        </div>
+     
         <div class="card">
             <div class ="imgbx">
-                <img src="{% static 'core/img/vangoh.jpg'%}">
+                <img src={{pintura.imagen.url}} width="300" height="200">
             </div>
             <div class = "content">
-                <h2>Historia</h2>
-                <p>Pintado en junio de 1889, representa la vista desde la ventana orientada al este de su habitación de asilo en Saint-Rémy-de-Provence, justo antes del amanecer, con la adición de un pueblo imaginario.</p>
+                <h2>{{pintura.titulo}}</h2>
+                <p>descripcion: {{pintura.descripcion}}</p>
+                <p>Creado por {{pintura.id}} el {{pintura.fecha}} pintura fuertemente influenciada por el {{pintura.categoria}} </p>
             </div>
-        </div>
+        </div> 
+         
+        
         <div class="pie_pagina">
 			<h4>Contactos página:</h4>
 			<p>Número:+56982732277</p>

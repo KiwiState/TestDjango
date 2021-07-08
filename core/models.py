@@ -32,7 +32,7 @@ class  Pintura(models.Model):
     descripcion = models.CharField(max_length=500,verbose_name='descripcion',null = True)
     categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE,null = True)
     fecha = models.DateField(verbose_name='fecha',null = True)
-    imagen = models.ImageField(null=True,blank=True,verbose_name='imagen')
+    imagen = models.ImageField(upload_to="pinturas", null=True,verbose_name='imagen')
     def __str__(self):   
         return self.titulo
 
